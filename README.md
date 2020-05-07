@@ -1,4 +1,4 @@
-# storybook-addon-responsive-views
+# storybook-responsive-views
 View your Storybook stories in a range of responsive viewports
 
 ## Installation
