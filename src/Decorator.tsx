@@ -13,8 +13,8 @@ export const getDefaultState = (name: string) => JSON.parse(localStorage.getItem
 export const ResponsiveContextConsumer = FrameContextConsumer;
 
 export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) => {
-  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-addons/views'));
-  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-addons/container'));
+  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-views/views'));
+  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-views/container'));
   
   const viewports = React.useMemo(() => Object.entries(breakpoints).reduce(
     (acc: { name: string, width: string, container: any }[], view) => {
@@ -34,8 +34,8 @@ export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) 
 
   React.useEffect(() => {
     const channel = addons.getChannel();
-    channel.on('responsive-addons/views', setViewsEnabled);
-    channel.on('responsive-addons/container', setContainerEnabled);
+    channel.on('responsive-views/views', setViewsEnabled);
+    channel.on('responsive-views/container', setContainerEnabled);
   }, []);
 
   /**
@@ -51,7 +51,7 @@ export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) 
     ? <div style={{ display: 'flex' }}>
         {viewports.map(({ name, width, container }) => (
           <div key={width} style={{ margin: 15 }}>
-            <span style={{ fontSize: 14 }}>{name}</span>
+            <span style={{ fontSize: 12, display: 'block', marginBottom: 10, color: '#999' }}>{name}</span>
             <div style={{ height: 'calc(100vh - 80px)', width }}>
               {/*
               * Every viewport content must be rendered inside an iFrame to ensure

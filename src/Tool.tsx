@@ -5,19 +5,19 @@ import { getDefaultState } from './Decorator';
 
 const Tool = () => {
   const channel = addons.getChannel();
-  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-addons/views'));
-  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-addons/container'));
+  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-views/views'));
+  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-views/container'));
 
   const handleEnableViews = () => {
     setViewsEnabled(!viewsEnabled);
-    localStorage.setItem('responsive-addons/views', (!viewsEnabled).toString());
-    channel.emit('responsive-addons/views', !viewsEnabled);
+    localStorage.setItem('responsive-views/views', (!viewsEnabled).toString());
+    channel.emit('responsive-views/views', !viewsEnabled);
   };
 
   const handleEnableContainer = () => {
     setContainerEnabled(!containerEnabled);
-    localStorage.setItem('responsive-addons/container', (!containerEnabled).toString());
-    channel.emit('responsive-addons/container', !containerEnabled);
+    localStorage.setItem('responsive-views/container', (!containerEnabled).toString());
+    channel.emit('responsive-views/container', !containerEnabled);
   };
 
   return (
