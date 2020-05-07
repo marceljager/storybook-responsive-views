@@ -1,5 +1,5 @@
 {
-  "name": "storybook-responsive-views",
+  "name": "@marceljager/storybook-responsive-views",
   "version": "0.1.0",
   "description": "View your Storybook stories in a range of responsive viewports",
   "main": "dist/index.js",
@@ -11,16 +11,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marceljager/storybook-responsive-views.git"
+    "url": "git+https://github.com/marceljager/storybook-responsive-views.git"
   },
   "keywords": [
     "Hello",
     "Greeter"
   ],
-  "author": {
-    "name": "Marcel Jäger",
-    "email": "mjager9@gmail.com"
-  },
+  "author": "Marcel Jäger <mjager9@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/marceljager/storybook-responsive-views/issues"
