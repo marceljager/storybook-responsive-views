@@ -1,1 +1,1 @@
-require('./dist/register').default();
+require('./dist/register');
