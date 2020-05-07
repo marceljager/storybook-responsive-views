@@ -1,6 +1,6 @@
 {
   "name": "@marceljager/storybook-responsive-views",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "View your Storybook stories in a range of responsive viewports",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,8 +14,10 @@
     "url": "git+https://github.com/marceljager/storybook-responsive-views.git"
   },
   "keywords": [
-    "Hello",
-    "Greeter"
+    "Storybook",
+    "React",
+    "Responsive",
+    "Views"
   ],
   "author": "Marcel Jäger <mjager9@gmail.com>",
   "license": "ISC",
@@ -23,13 +25,6 @@
     "url": "https://github.com/marceljager/storybook-responsive-views/issues"
   },
   "homepage": "https://github.com/marceljager/storybook-responsive-views",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm test",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-push": "npm run lint && npm test"
-    }
-  },
   "dependencies": {
     "@storybook/addons": "5.3.18",
     "@storybook/components": "5.3.18",
@@ -48,6 +43,7 @@
     "typescript": "3.8.3"
   },
   "files": [
-    "dist/**/*"
+    "dist/**/*",
+    "register.js"
   ]
 }
