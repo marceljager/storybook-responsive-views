@@ -5,19 +5,19 @@ import { getDefaultState } from './Decorator';
 
 const Tool = () => {
   const channel = addons.getChannel();
-  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-views/views'));
-  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-views/container'));
+  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('storybook-responsive-views/views'));
+  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('storybook-responsive-views/container'));
 
   const handleEnableViews = () => {
     setViewsEnabled(!viewsEnabled);
-    localStorage.setItem('responsive-views/views', (!viewsEnabled).toString());
-    channel.emit('responsive-views/views', !viewsEnabled);
+    localStorage.setItem('storybook-responsive-views/views', (!viewsEnabled).toString());
+    channel.emit('storybook-responsive-views/views', !viewsEnabled);
   };
 
   const handleEnableContainer = () => {
     setContainerEnabled(!containerEnabled);
-    localStorage.setItem('responsive-views/container', (!containerEnabled).toString());
-    channel.emit('responsive-views/container', !containerEnabled);
+    localStorage.setItem('storybook-responsive-views/container', (!containerEnabled).toString());
+    channel.emit('storybook-responsive-views/container', !containerEnabled);
   };
 
   return (

@@ -8,13 +8,13 @@ interface IDecoratorProps {
   children: StoryApi;
 }
 
-export const getDefaultState = (name: string) => JSON.parse(localStorage.getItem(name) || '') || false;
+export const getDefaultState = (name: string) => JSON.parse((localStorage.getItem(name)) || 'false') || false;
 
 export const ResponsiveContextConsumer = FrameContextConsumer;
 
 export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) => {
-  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('responsive-views/views'));
-  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('responsive-views/container'));
+  const [ viewsEnabled, setViewsEnabled ] = React.useState(getDefaultState('storybook-responsive-views/views'));
+  const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('storybook-responsive-views/container'));
   
   const viewports = React.useMemo(() => Object.entries(breakpoints).reduce(
     (acc: { name: string, width: string, container: any }[], view) => {
@@ -34,8 +34,8 @@ export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) 
 
   React.useEffect(() => {
     const channel = addons.getChannel();
-    channel.on('responsive-views/views', setViewsEnabled);
-    channel.on('responsive-views/container', setContainerEnabled);
+    channel.on('storybook-responsive-views/views', setViewsEnabled);
+    channel.on('storybook-responsive-views/container', setContainerEnabled);
   }, []);
 
   /**
