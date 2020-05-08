@@ -17,7 +17,7 @@ export const Decorator: React.FC<IDecoratorProps> = ({ breakpoints, children }) 
   const [ containerEnabled, setContainerEnabled ] = React.useState(getDefaultState('storybook-responsive-views/container'));
   
   const viewports = React.useMemo(() => Object.entries(breakpoints).reduce(
-    (acc: { name: string, width: string, container: any }[], view) => {
+    (acc: { name: string, width: string, container: any }[], view: [string, any]) => {
       const name = view[0];
       const { width, container } = view[1];
 
