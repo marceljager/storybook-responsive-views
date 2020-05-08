@@ -39,7 +39,6 @@ addDecorator(withResponsiveViews);
 ## Breakpoint config
 
 For each breakpoint, `withResponsiveViews` will create a view at 1px below the breakpoint and the breakpoint itself.
-
 To set your own breakpoints, pass an object to the `withResponsiveViews` decorator. An example:
 
 ```js
